@@ -1,0 +1,15 @@
+.p-datatable-customers {
+    width: 80%;
+    margin: 20px 0;
+    display: block;
+  }
+  
+  .p-datatable-customers th, .p-datatable-customers td {
+    text-align: left;
+    padding: 10px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }

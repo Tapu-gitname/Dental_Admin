@@ -1,0 +1,42 @@
+<p-card header="Add Patient" styleClass="ui-card-shadow">
+    <form [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+      <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-12 p-md-4 p-lg-4">
+          <label for="name">Name</label>
+          <input id="name" type="text" pInputText formControlName="name" />
+        </div>
+        <div class="p-field p-col-12 p-md-4 p-lg-4">
+          <label for="phone">Phone Number</label>
+          <input id="phone" type="text" pInputText formControlName="phone" />
+        </div>
+        <div class="p-field p-col-12 p-md-4 p-lg-4">
+          <label for="address">Address</label>
+          <input id="address" type="text" pInputText formControlName="address" />
+        </div>
+        <div class="p-field p-col-12 p-md-4 p-lg-4">
+          <label for="age">Age</label>
+          <p-inputNumber id="age" formControlName="age" [min]="0"></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-md-4 p-lg-4">
+          <label for="sex">Sex</label>
+          <p-dropdown [options]="sexOptions" optionLabel="label" optionValue="value" formControlName="sex" placeholder="Select Sex"></p-dropdown>
+        </div>
+        <div class="p-field p-col-12 p-md-4 p-lg-4">
+          <label for="treatment">Treatment</label>
+          <p-dropdown [options]="treatmentOptions" optionLabel="name" optionValue="name" formControlName="treatment" placeholder="Select Treatment"></p-dropdown>
+        </div>
+        <div class="p-field p-col-12 p-md-6 p-lg-4">
+          <label for="cost">Cost of Treatment</label>
+          <p-inputNumber id="cost" formControlName="cost" [min]="0" mode="currency" currency="USD" locale="en-US"></p-inputNumber>
+        </div>
+        <div class="p-field p-col-12 p-md-6 p-lg-4">
+          <label for="status">Status</label>
+          <p-inputSwitch formControlName="status"></p-inputSwitch>
+        </div>
+        <div class="p-field p-col-12 p-md-12 p-lg-4">
+          <button pButton type="submit" label="Submit" class="p-mt-2 p-button-sm"></button>
+        </div>
+      </div>
+    </form>
+  </p-card>
+  

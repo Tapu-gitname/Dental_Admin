@@ -1,0 +1,13 @@
+.ui-card-shadow {
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .p-field {
+    margin-bottom: 1rem;
+  }
+  
+  .p-button-sm {
+    width: auto;
+  }
+  

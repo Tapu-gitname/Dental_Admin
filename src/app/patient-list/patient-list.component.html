@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-end">
+    <p-button label="Add Patient" [routerLink]="['/add-patient']" [raised]="true" icon="pi pi-user-plus"></p-button>
+</div>
+<div class="container">
+    <p-table [value]="patients" class="p-datatable-customers" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Treatment</th>
+            <th style="width: 15rem; text-align: center;">Action</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-patient>
+          <tr>
+            <td>{{patient.name}}</td>
+            <td>{{patient.phone}}</td>
+            <td>{{patient.treatment}}</td>
+            <td style="text-align: center;">
+                <p-button [text]="true"><i class="pi pi-indian-rupee"></i></p-button>
+                <p-button [text]="true"><i class="pi pi-pencil"></i></p-button>
+                <p-button [text]="true"><i class="pi pi-trash"></i></p-button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+</div>
+

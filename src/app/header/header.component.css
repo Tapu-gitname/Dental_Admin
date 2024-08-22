@@ -1,0 +1,17 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007ad9;
+    color: white;
+  }
+  
+  .header-title {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .header-buttons button {
+    margin-left: 10px;
+  }
