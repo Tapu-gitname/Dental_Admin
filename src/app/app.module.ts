@@ -21,11 +21,13 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { ToastModule } from 'primeng/toast';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
+import { PatientBalanceDialogComponent } from './patient-balance-dialog/patient-balance-dialog.component';
+import { DialogModule } from 'primeng/dialog';
 // import { ChartModule } from 'primeng/chart';
 // import { ApiService } from '../api.service';
 
@@ -39,12 +41,14 @@ import { CommonModule } from '@angular/common';
     PatientListComponent,
     DashboardComponent,
     RevenueComponent,
+    PatientBalanceDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, ReactiveFormsModule, HttpClientModule, InputTextModule,
     InputNumberModule, DropdownModule, InputSwitchModule, ButtonModule,
-    ToastModule, TableModule, BrowserAnimationsModule, CommonModule, CardModule
+    ToastModule, TableModule, BrowserAnimationsModule, CommonModule, CardModule,
+    FormsModule, DialogModule
   ],
   providers: [
     provideClientHydration(),

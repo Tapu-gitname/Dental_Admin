@@ -26,8 +26,16 @@ export class ApiService {
       catchError(this.handleError))
   }
 
+  getGrossRevenue() {
+    return this.http.get(`${this.apiUrl}/dental/gross_revenue/`)
+  }
+
   private handleError(error: HttpErrorResponse) {
     console.error('An error occurred:', error.message);
     return throwError('Something bad happened; please try again later.');
+  }
+
+  getRemainingAmount(patientId: number) {
+    return this.http.get(`${this.apiUrl}/dental/get_remaining_amount?patient_id=${patientId}`)
   }
 }

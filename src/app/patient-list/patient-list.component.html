@@ -17,12 +17,13 @@
             <td>{{patient.phone}}</td>
             <td>{{patient.treatment}}</td>
             <td style="text-align: center;">
-                <p-button [text]="true"><i class="pi pi-indian-rupee"></i></p-button>
+                <p-button [text]="true" (click)="showBalanceDialog(patient.id)"><i class="pi pi-indian-rupee"></i></p-button>
                 <p-button [text]="true"><i class="pi pi-pencil"></i></p-button>
                 <p-button [text]="true"><i class="pi pi-trash"></i></p-button>
             </td>
           </tr>
         </ng-template>
       </p-table>
+      <app-patient-balance-dialog [(display)]="displayBalanceDialog" [patientId]="selectedPatientId" (onClose)="closeDialog()"></app-patient-balance-dialog>
 </div>
 

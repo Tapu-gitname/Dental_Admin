@@ -1,0 +1,19 @@
+<p-dialog header="Patient Balance Sheet" [(visible)]="display" [modal]="true" [closable]="false" [style]="{width: '30vw'}">
+    <div class="p-fluid">
+      <div class="p-field">
+        <label for="amountPaid">Amount Paid</label>
+        <input id="amountPaid" type="text" pInputText [(ngModel)]="amountPaid" />
+      </div>
+  
+      <div class="p-field" style="margin-top: 20px;">
+        <label for="remainingAmount">Remaining Amount</label>
+        <input id="remainingAmount" type="text" pInputText [(ngModel)]="remainingAmount" readonly />
+      </div>
+    </div>
+  
+    <p-footer>
+      <button pButton label="Save" icon="pi pi-check" (click)="save()"></button>
+      <button pButton label="Cancel" icon="pi pi-times" class="p-button-secondary" (click)="display=false"></button>
+    </p-footer>
+  </p-dialog>
+  

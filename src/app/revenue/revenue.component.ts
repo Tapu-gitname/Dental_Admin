@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { CardModule } from 'primeng/card';
 // import { ChartModule } from 'primeng/chart';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-revenue',
@@ -10,6 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RevenueComponent implements OnInit {
   // lineChartData: any;
+  grossRevenue: any;
+  daily_revenue: any;
+  monthly_revenue: any;
+  yearly_revenue: any;
+  // dailyRevenue: any;
+
+  constructor(public service: ApiService) {
+
+  }
 
   ngOnInit() {
     // this.lineChartData = {
@@ -24,5 +34,21 @@ export class RevenueComponent implements OnInit {
     //     }
     //   ]
     // };
+    this.service.getGrossRevenue().subscribe((res:any) => {
+      this.grossRevenue = res
+    }) 
+
+    console.log(this.grossRevenue);
+
+    this.daily_revenue = this.grossRevenue.daily_revenue;
+    console.log(this.daily_revenue)
+    this.monthly_revenue = this.grossRevenue.monthly_revenue;
+    console.log(this.monthly_revenue)
+    this.yearly_revenue = this.grossRevenue.yearly_revenue;
+    console.log(this.yearly_revenue)
+
+
+
+
   }
 }
