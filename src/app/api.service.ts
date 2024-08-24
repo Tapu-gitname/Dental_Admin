@@ -13,8 +13,8 @@ export class ApiService {
   private apiUrl = environment.apiUrl;
   constructor(private http: HttpClient) { }
 
-  getPatients() {
-    return this.http.get(`${this.apiUrl}/dental/patients/`)
+  getPatients(obj: any) {
+    return this.http.get(`${this.apiUrl}/dental/patients/?search=${obj.search}&page=${obj.page}`)
   }
 
   addPatient(obj: any){
@@ -37,5 +37,9 @@ export class ApiService {
 
   getRemainingAmount(patientId: number) {
     return this.http.get(`${this.apiUrl}/dental/get_remaining_amount?patient_id=${patientId}`)
+  }
+
+  updatePatientFee(obj: any) {
+    return this.http.post(`${this.apiUrl}/dental/update_fee/`, obj)
   }
 }

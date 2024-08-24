@@ -1,58 +1,40 @@
-<div class="p-grid p-nogutter">
-    <div class="p-col-12 p-md-4">
-      <p-card header="Today Revenue" styleClass="card-style">
-        <ng-template pTemplate="title">
-          <i class="pi pi-dollar"></i> Today Revenue
-        </ng-template>
-        <ng-template pTemplate="subtitle">
-          <span class="p-text-bold">{{daily_revenue}}</span>
-        </ng-template>
-        <ng-template pTemplate="content">
-          <div class="card-content">
-            <p>Revenue generated today</p>
-          </div>
-        </ng-template>
-      </p-card>
-    </div>
-    <div class="p-col-12 p-md-4">
-      <p-card header="Monthly Revenue" styleClass="card-style">
-        <ng-template pTemplate="title">
-          <i class="pi pi-dollar"></i> Monthly Revenue
-        </ng-template>
-        <ng-template pTemplate="subtitle">
-          <span class="p-text-bold">{{monthly_revenue}}</span>
-        </ng-template>
-        <ng-template pTemplate="content">
-          <div class="card-content">
-            <p>Revenue generated this month</p>
-          </div>
-        </ng-template>
-      </p-card>
-    </div>
-    <div class="p-col-12 p-md-4">
-      <p-card header="Yearly Revenue" styleClass="card-style">
-        <ng-template pTemplate="title">
-          <i class="pi pi-dollar"></i> Yearly Revenue
-        </ng-template>
-        <ng-template pTemplate="subtitle">
-          <span class="p-text-bold">{{yearly_revenue}}</span>
-        </ng-template>
-        <ng-template pTemplate="content">
-          <div class="card-content">
-            <p>Revenue generated this year</p>
-          </div>
-        </ng-template>
-      </p-card>
-    </div>
+<div class="p-grid p-nogutter" style="display: flex; justify-content: space-between;">
+  <div class="p-col-12 p-md-4" style="flex: 1; margin-right: 10px;">
+    <p-card header="Today Revenue" styleClass="card-style">
+      <ng-template pTemplate="subtitle">
+        <span class="p-text-bold">{{daily_revenue}}</span>
+      </ng-template>
+      <ng-template pTemplate="content">
+        <div class="card-content">
+          <p>Revenue generated today</p>
+        </div>
+      </ng-template>
+    </p-card>
   </div>
-  
-  <!-- <div class="p-grid p-nogutter">
-    <div class="p-col-12">
-      <p-card header="Daily Revenue (Last Month)" styleClass="card-style">
-        <ng-template pTemplate="content">
-          <p-chart type="line" p-chart>
-        </ng-template>
-      </p-card>
-    </div>
+
+  <div class="p-col-12 p-md-4" style="flex: 1; margin-right: 10px;">
+    <p-card header="Monthly Revenue" styleClass="card-style">
+      <ng-template pTemplate="subtitle">
+        <span class="p-text-bold">{{monthly_revenue}}</span>
+      </ng-template>
+      <ng-template pTemplate="content">
+        <div class="card-content">
+          <p>Revenue generated this month</p>
+        </div>
+      </ng-template>
+    </p-card>
   </div>
-   -->
+
+  <div class="p-col-12 p-md-4" style="flex: 1;">
+    <p-card header="Yearly Revenue" styleClass="card-style">
+      <ng-template pTemplate="subtitle">
+        <span class="p-text-bold">{{yearly_revenue}}</span>
+      </ng-template>
+      <ng-template pTemplate="content">
+        <div class="card-content">
+          <p>Revenue generated this year</p>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+</div>

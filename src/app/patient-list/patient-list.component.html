@@ -1,5 +1,11 @@
-<div class="d-flex justify-content-end">
+<div style="display: flex; justify-content: space-between;  align-items: center">
+  <div>
     <p-button label="Add Patient" [routerLink]="['/add-patient']" [raised]="true" icon="pi pi-user-plus"></p-button>
+  </div>
+  <div class="p-field">
+    <label for="searchBox">Search Patients </label>
+    <input id="searchBox" type="text" pInputText placeholder="Search by name, phone, or treatment" [(ngModel)]="searchQuery" (input)="onSearch($event)" />
+  </div>
 </div>
 <div class="container">
     <p-table [value]="patients" class="p-datatable-customers" [tableStyle]="{ 'min-width': '50rem' }">

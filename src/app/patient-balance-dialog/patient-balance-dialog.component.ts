@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-patient-balance-dialog',
@@ -18,8 +19,9 @@ export class PatientBalanceDialogComponent {
 
   amountPaid: number = 0;
   remainingAmount: number = 0;
+  // obj: any;
 
-  constructor(private http: HttpClient, private service: ApiService) {}
+  constructor(private http: HttpClient, private service: ApiService, private messageService: MessageService) {}
 
   ngOnChanges() {
     if (this.patientId && this.display) {
@@ -42,6 +44,19 @@ export class PatientBalanceDialogComponent {
   // Handle the Save button click event
   save() {
     // Logic to save the amount paid can be added here.
+    const obj = {
+      'patient': this.patientId,
+      'amount_paid': this.amountPaid
+    }
+    this.service.updatePatientFee(obj).subscribe({
+      next: (res: any) => { // or specify the exact type if known
+          this.messageService.add({severity: 'success', summary: 'Success', detail: 'Patient fee updated successfully'});
+      },
+      error: (error: any) => { // or specify the exact type if known
+          this.messageService.add({severity: 'error', summary: 'Error', detail: 'Failed to update patient fee'});
+      }
+  });
+
     this.closeDialog();
   }
 

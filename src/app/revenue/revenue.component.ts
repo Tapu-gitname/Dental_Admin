@@ -36,19 +36,10 @@ export class RevenueComponent implements OnInit {
     // };
     this.service.getGrossRevenue().subscribe((res:any) => {
       this.grossRevenue = res
+      this.daily_revenue = this.grossRevenue.daily_revenue;
+      this.monthly_revenue = this.grossRevenue.monthly_revenue;
+      this.yearly_revenue = this.grossRevenue.yearly_revenue;
     }) 
-
-    console.log(this.grossRevenue);
-
-    this.daily_revenue = this.grossRevenue.daily_revenue;
-    console.log(this.daily_revenue)
-    this.monthly_revenue = this.grossRevenue.monthly_revenue;
-    console.log(this.monthly_revenue)
-    this.yearly_revenue = this.grossRevenue.yearly_revenue;
-    console.log(this.yearly_revenue)
-
-
-
 
   }
 }
