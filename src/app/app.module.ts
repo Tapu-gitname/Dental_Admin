@@ -11,7 +11,7 @@ import { PatientListComponent } from './patient-list/patient-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RevenueComponent } from './revenue/revenue.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -28,6 +28,8 @@ import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 import { PatientBalanceDialogComponent } from './patient-balance-dialog/patient-balance-dialog.component';
 import { DialogModule } from 'primeng/dialog';
+import { LoginComponent } from './login/login.component';
+import { TokenInterceptor } from './interceptors/token.service';
 // import { ChartModule } from 'primeng/chart';
 // import { ApiService } from '../api.service';
 
@@ -42,6 +44,7 @@ import { DialogModule } from 'primeng/dialog';
     DashboardComponent,
     RevenueComponent,
     PatientBalanceDialogComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,13 @@ import { DialogModule } from 'primeng/dialog';
   ],
   providers: [
     provideClientHydration(),
-    FormBuilder, Validators, HttpClient, MessageService
+    FormBuilder, Validators, HttpClient, MessageService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+
   ],
   bootstrap: [AppComponent]
 })

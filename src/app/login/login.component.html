@@ -1,0 +1,29 @@
+<div class="login-page">
+    <div class="left-panel">
+      <img src="assets/dental-image.jpg" alt="Dental" class="dental-image" />
+    </div>
+    <div class="right-panel">
+      <div class="login-form-container">
+        <p-card class="login-card">
+          <div class="login-header">
+            <h2>Admin Login</h2>
+          </div>
+          <form (ngSubmit)="onSubmit()">
+            <div class="p-field">
+              <label for="username">Username</label>
+              <input id="username" type="text" pInputText [(ngModel)]="username" name="username" required />
+            </div>
+            <div class="p-field">
+              <label for="password">Password</label>
+              <input id="password" type="password" pInputText [(ngModel)]="password" name="password" required />
+            </div>
+            <div class="p-field button-container">
+              <p-button label="Login" (onClick)="onSubmit()" [disabled]="loading" [loading]="loading"></p-button>
+            </div>
+          </form>
+          <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        </p-card>
+      </div>
+    </div>
+  </div>
+  
