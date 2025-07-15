@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18 # Use the Node.js version that matches your Angular setup
+    commands:
+      - echo Installing Angular CLI...
+      - npm install -g @angular/cli
+      - echo Installing project dependencies...
+      - npm install
+
+  build:
+    commands:
+      - echo Building the Angular app...
+      - ng s
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: dist/admin # replace with your actual Angular project name
+
+cache:
+  paths:
+    - node_modules/**/*
